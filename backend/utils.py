@@ -52,3 +52,22 @@ def get_recommended_actions(risk_level: str):
         "You may continue with caution",
         "Ensure the website address is correct"
     ]
+
+
+def get_popup_hint(risk_level: str):
+    if risk_level == "HIGH":
+        return {
+            "emoji": "🔴",
+            "hint": "Login scam"
+        }
+
+    if risk_level == "MEDIUM":
+        return {
+            "emoji": "🟡",
+            "hint": "Suspicious link"
+        }
+
+    return {
+        "emoji": "🟢",
+        "hint": "Looks safe"
+    }
